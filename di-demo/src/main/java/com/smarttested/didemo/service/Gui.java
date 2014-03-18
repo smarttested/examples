@@ -8,7 +8,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created by andrey.vorobyov on 16/03/14.
+ * Marks UI-related stuff
+ *
+ * @author Andrei Varabyeu
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD})

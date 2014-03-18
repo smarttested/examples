@@ -21,10 +21,10 @@ public class InstancesStorage {
 				}
 			});
 
-	private Map<Class<?>, Object> injectectionInstances;
+	private Map<Class<?>, Object> instancesCache;
 
 	private InstancesStorage() {
-		injectectionInstances = new HashMap<Class<?>, Object>();
+		instancesCache = new HashMap<Class<?>, Object>();
 	}
 
 	public static InstancesStorage getInstance() {
@@ -33,14 +33,14 @@ public class InstancesStorage {
 
 	@SuppressWarnings("unchecked")
 	public <T> T getObject(Class<?> clazz) {
-		if (!injectectionInstances.containsKey(clazz)) {
+		if (!instancesCache.containsKey(clazz)) {
 			insertInstanceToCache(clazz);
 		}
-		return (T) injectectionInstances.get(clazz);
+		return (T) instancesCache.get(clazz);
 	}
 
 	public void insertInstanceToCache(Class<?> clazz) {
-		injectectionInstances.put(clazz, createInstance(clazz));
+		instancesCache.put(clazz, createInstance(clazz));
 	}
 
 	public Object createInstance(Class<?> clazz) {

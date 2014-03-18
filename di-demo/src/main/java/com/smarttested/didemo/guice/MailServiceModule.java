@@ -3,10 +3,10 @@ package com.smarttested.didemo.guice;
 import com.google.inject.AbstractModule;
 import com.smarttested.didemo.service.*;
 
-import java.util.GregorianCalendar;
-
 /**
- * Created by andrey.vorobyov on 16/03/14.
+ * Guice configuration module
+ *
+ * @author Andrei Varabyeu
  */
 public class MailServiceModule extends AbstractModule {
     @Override

@@ -10,7 +10,7 @@ import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
 
 /**
- * Created by andrey.vorobyov on 16/03/14.
+ * Demo test for showing Guice injection
  */
 @Guice(modules = {MailServiceModule.class})
 public class GuiceDemoTest {
