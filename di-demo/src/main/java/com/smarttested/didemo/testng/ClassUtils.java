@@ -11,13 +11,13 @@ import java.util.concurrent.Callable;
  * 
  */
 public class ClassUtils {
-	/**
-	 * Set value for field. Field may be private
-	 * 
-	 * @param instance
-	 * @param field
-	 * @param value
-	 */
+
+    /**
+     * Set value for field. Field may be private
+     * @param instance Instance for value to be set
+     * @param field Field of instance to be set
+     * @param value Value to be set
+     */
 	public static void setFieldValue(final Object instance, final Field field,
 			final Object value) {
 		new AccessibleObjectAction(field).execute(new Callable<Void>() {
