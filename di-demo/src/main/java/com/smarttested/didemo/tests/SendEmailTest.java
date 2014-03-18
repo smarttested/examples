@@ -1,14 +1,15 @@
 package com.smarttested.didemo.tests;
 
-import java.util.UUID;
-
-import org.junit.Assert;
-
 import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import com.smarttested.didemo.model.Email;
 import com.smarttested.didemo.service.MailService;
 import com.smarttested.didemo.service.UIMailService;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import java.util.UUID;
 
 /**
  * DI Demo Test
@@ -24,7 +25,8 @@ public class SendEmailTest {
 
 	private MailService receiver = new UIMailService();
 
-	public void testSending() {
+	@Test
+    public void testSending() {
 
 		/*
 		 * Prepare random unique postfix. Also we can use UUID there
@@ -55,6 +57,6 @@ public class SendEmailTest {
 					}
 				});
 
-		Assert.assertTrue("Message is not delivered", received.isPresent());
+		Assert.assertTrue(received.isPresent(), "Message is not delivered");
 	}
 }

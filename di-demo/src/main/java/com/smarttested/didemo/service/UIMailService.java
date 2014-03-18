@@ -1,26 +1,31 @@
 package com.smarttested.didemo.service;
 
-import java.util.List;
-
 import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import com.smarttested.didemo.model.Email;
 
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * Stub of UI-mail service. Just for demo
+ *
+ * @author Andrei Varabyeu
+ */
 public class UIMailService implements MailService {
 
-	public void sendEmail(Email email) {
-		// TODO Auto-generated method stub
+    public void sendEmail(Email email) {
+        /* Do nothing. This is just stub for demo */
+    }
 
-	}
+    public List<Email> receiveAllEmails() {
+        /* Do nothing. This is just demo stub */
+        return Collections.emptyList();
+    }
 
-	public List<Email> receiveAllEmails() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Optional<Email> receiveEmail(Predicate<Email> predicate) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public Optional<Email> receiveEmail(Predicate<Email> predicate) {
+        /* Return just absent */
+        return Optional.absent();
+    }
 
 }
