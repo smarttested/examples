@@ -7,6 +7,11 @@
 	<name>DI Demo</name>
 	<description>Useful examples of Dependency Injection in Test Automation</description>
 
+
+    <properties>
+        <spring.version>4.0.2.RELEASE</spring.version>
+    </properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>commons-email</groupId>
@@ -45,6 +50,34 @@
 			<artifactId>reflections</artifactId>
 			<version>0.9.9-RC1</version>
 		</dependency>
+
+
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.9-RC1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
