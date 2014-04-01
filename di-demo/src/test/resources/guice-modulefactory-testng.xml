@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="Guice Module Factory Demo" verbose="1">
+
+    <test name="Guice Module Factory Demo">
+        <parameter name="serviceType" value="UI"/>
+        <classes>
+            <class name="com.smarttested.didemo.guice.ModuleFactoryTest"/>
+        </classes>
+    </test>
+
+</suite>

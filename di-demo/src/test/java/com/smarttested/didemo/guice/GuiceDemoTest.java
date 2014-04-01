@@ -8,6 +8,9 @@ import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
 
 import javax.inject.Inject;
+import javax.inject.Named;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Demo test for showing Guice injection
@@ -20,11 +23,13 @@ public class GuiceDemoTest {
     private MailService uiMailService;
 
     @Inject
-    @Api
+    //@Api
+    @Named("api")
     private MailService apiMailService;
 
     @Test
     public void testInjection(){
+        uiMailService.receiveAllEmails();
         Assert.assertNotNull(uiMailService);
         Assert.assertNotNull(apiMailService);
     }
