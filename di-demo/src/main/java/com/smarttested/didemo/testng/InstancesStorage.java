@@ -43,7 +43,7 @@ public class InstancesStorage {
 		instancesCache.put(clazz, createInstance(clazz));
 	}
 
-	public Object createInstance(Class<?> clazz) {
+	private Object createInstance(Class<?> clazz) {
 		try {
 			return clazz.newInstance();
 		} catch (InstantiationException e) {
