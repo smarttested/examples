@@ -25,6 +25,10 @@ public class InjectedObjectsFactoryImpl extends ObjectFactoryImpl {
         return testInstance;
     }
 
+    /**
+     * Injects dependencies if needed
+     * @param instance - test class instance
+     */
     public void process(Object instance) {
         Field[] fields = instance.getClass().getDeclaredFields();
 
