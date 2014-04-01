@@ -1,8 +1,6 @@
-package com.smarttested.didemo.tests;
+package com.smarttested.didemo.testng;
 
 import com.smarttested.didemo.service.MailService;
-import com.smarttested.didemo.testng.InjectInstance;
-import com.smarttested.didemo.testng.InjectedObjectsFactoryImpl;
 import org.testng.TestNG;
 import org.testng.annotations.Test;
 

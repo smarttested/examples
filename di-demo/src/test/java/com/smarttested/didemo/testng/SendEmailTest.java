@@ -1,4 +1,4 @@
-package com.smarttested.didemo.tests;
+package com.smarttested.didemo.testng;
 
 import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
