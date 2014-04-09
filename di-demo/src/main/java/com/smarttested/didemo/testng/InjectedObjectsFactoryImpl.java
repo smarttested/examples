@@ -58,14 +58,14 @@ public class InjectedObjectsFactoryImpl extends ObjectFactoryImpl {
                     /* once we find implementation class, let's create instance. We don't care about instance we need
                      to inject so let's inject first one
                      */
-                    fieldInstance = InstancesStorage.getInstance()
+                    fieldInstance = ObjectContainer.getInstance()
                             .getObject(
                                     (Class<?>) implementations.iterator()
                                             .next()
                             );
                 } else {
                     /* if this field is not an interface we are able to create new instance of it */
-                    fieldInstance = InstancesStorage.getInstance()
+                    fieldInstance = ObjectContainer.getInstance()
                             .getObject(field.getType());
                 }
 

@@ -12,22 +12,22 @@ import com.google.common.base.Suppliers;
  * @author avarabyeu
  * 
  */
-public class InstancesStorage {
-	private static Supplier<InstancesStorage> instance = Suppliers
-			.memoize(new Supplier<InstancesStorage>() {
+public class ObjectContainer {
+	private static Supplier<ObjectContainer> instance = Suppliers
+			.memoize(new Supplier<ObjectContainer>() {
 
-				public InstancesStorage get() {
-					return new InstancesStorage();
+				public ObjectContainer get() {
+					return new ObjectContainer();
 				}
 			});
 
 	private Map<Class<?>, Object> instancesCache;
 
-	private InstancesStorage() {
+	private ObjectContainer() {
 		instancesCache = new HashMap<Class<?>, Object>();
 	}
 
-	public static InstancesStorage getInstance() {
+	public static ObjectContainer getInstance() {
 		return instance.get();
 	}
 
