@@ -1,5 +1,6 @@
 package com.smarttested.didemo.testng;
 
+import com.google.common.eventbus.EventBus;
 import com.smarttested.didemo.service.ApiMailService;
 import com.smarttested.didemo.service.MailService;
 import org.testng.TestNG;

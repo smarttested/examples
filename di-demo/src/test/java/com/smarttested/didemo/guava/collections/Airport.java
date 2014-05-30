@@ -17,7 +17,7 @@ public class Airport {
     private Long woeid;
     private String tz;
     private String phone;
-    private String type;
+    private AirportType type;
     private String email;
     private String url;
     @SerializedName("runway_length")
@@ -109,11 +109,11 @@ public class Airport {
         this.phone = phone;
     }
 
-    public String getType() {
+    public AirportType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(AirportType type) {
         this.type = type;
     }
 
