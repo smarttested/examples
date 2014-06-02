@@ -25,7 +25,7 @@ public class ComparisonTest {
             }
         });
 
-        System.out.println(Joiner.on("\n").join(airports));
+        System.out.println(Joiner.on("\n").join(usaAirports));
     }
 
     private List<Airport> getAirports() throws IOException {

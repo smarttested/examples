@@ -2,7 +2,6 @@ package com.smarttested.didemo.guava.collections;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Predicate;
-import com.google.common.base.StandardSystemProperty;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.io.ByteSource;
@@ -12,7 +11,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -62,12 +60,7 @@ class AirportServiceImpl implements AirportService {
      */
     AirportServiceImpl(String baseUrl) throws IOException {
         this.baseUrl = baseUrl;
-
-        /* if cache file exists we can read airports response from it */
-        File fileCache = new File(StandardSystemProperty.JAVA_IO_TMPDIR.value(), AIRPORTS_CACHE_FILE);
-        if (fileCache.exists()) {
-            airportsCache = new FileCache(AIRPORTS_CACHE_FILE, Duration.ofDays(1));
-        }
+        airportsCache = new FileCache(AIRPORTS_CACHE_FILE, Duration.ofDays(1));
 
         /* Initializer GSON with custom Serializer/Deserializer */
         gson = new GsonBuilder().registerTypeAdapter(AirportType.class, new EnumTypeDeserializer()).create();
@@ -76,6 +69,7 @@ class AirportServiceImpl implements AirportService {
     @Override
     public List<Airport> getAirports() throws IOException {
         if (!airportsCache.exists()) {
+            System.out.println("Loading from URL...");
             URL airportsUrl = buildUrl(baseUrl, "/airports?format=json");
             byte[] airportsList = Resources.asByteSource(airportsUrl).read();
             airportsCache.store(ByteSource.wrap(airportsList));
