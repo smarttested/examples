@@ -40,8 +40,8 @@ public class FileCache {
             } else {
                 this.cachedFile = Optional.of(fileCache);
             }
-
-
+        } else {
+            this.cachedFile = Optional.absent();
         }
     }
 
@@ -65,7 +65,7 @@ public class FileCache {
 
     private CachedFile createCacheFile() {
         fileDate = Instant.now();
-        CachedFile file = new CachedFile(new File(StandardSystemProperty.JAVA_IO_TMPDIR.value(), fileDate + "_" + fileName));
+        CachedFile file = new CachedFile(new File(StandardSystemProperty.JAVA_IO_TMPDIR.value(), fileDate.toEpochMilli() + "_" + fileName));
 
         return file;
     }
@@ -76,7 +76,7 @@ public class FileCache {
 
         public CachedFile(File file) {
             this.file = Preconditions.checkNotNull(file, "Provided file shouldn't be null");
-            this.createdAt = Instant.parse(file.getName().substring(0, file.getName().lastIndexOf('_')));
+            this.createdAt = Instant.ofEpochMilli(Long.valueOf(file.getName().substring(0, file.getName().lastIndexOf('_'))));
         }
 
         public File getFile() {
@@ -84,7 +84,7 @@ public class FileCache {
         }
 
         public boolean expired(Duration lifeTime) {
-            return file.exists() && Instant.now().isBefore(createdAt.plus(lifeTime));
+            return !(file.exists() && Instant.now().isBefore(createdAt.plus(lifeTime)));
         }
     }
 
