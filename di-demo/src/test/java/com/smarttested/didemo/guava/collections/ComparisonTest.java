@@ -13,6 +13,10 @@ import java.util.List;
  */
 public class ComparisonTest {
 
+    private static final int lat = 50;
+    private static final int lon = 50;
+    private static final int radius = 5;
+
 
     @Test
     public void testAirports() throws IOException {
@@ -27,6 +31,16 @@ public class ComparisonTest {
 
         System.out.println(Joiner.on("\n").join(usaAirports));
     }
+
+    @Test
+    public void nearRadiusAirportsTest() throws IOException {
+        List<Airport> airports = getAirports();
+        Iterable<Airport> countryAirports =
+                Iterables.filter(airports, Predicates.insideArea(lat, lon, radius));
+
+        System.out.println(Joiner.on("\n").join(countryAirports));
+    }
+
 
     private List<Airport> getAirports() throws IOException {
         return new AirportServiceImpl().getAirports();
