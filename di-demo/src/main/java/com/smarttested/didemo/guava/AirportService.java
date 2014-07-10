@@ -1,4 +1,4 @@
-package com.smarttested.didemo.guava.collections;
+package com.smarttested.didemo.guava;
 
 import com.google.common.base.Predicate;
 
@@ -14,7 +14,7 @@ public interface AirportService {
      * Returns full airports list
      *
      * @return
-     * @throws IOException
+     * @throws java.io.IOException
      */
     List<Airport> getAirports() throws IOException;
 
@@ -23,7 +23,7 @@ public interface AirportService {
      *
      * @param predicate
      * @return
-     * @throws IOException
+     * @throws java.io.IOException
      */
     List<Airport> getAirports(Predicate<Airport> predicate) throws IOException;
 }

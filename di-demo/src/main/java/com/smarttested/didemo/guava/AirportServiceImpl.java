@@ -1,4 +1,4 @@
-package com.smarttested.didemo.guava.collections;
+package com.smarttested.didemo.guava;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Predicate;
@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * @author Implementation of Airport Service using the <a href="http://airports.pidgets.com/">http://airports.pidgets.com/</a> Web Service
  */
-class AirportServiceImpl implements AirportService {
+public class AirportServiceImpl implements AirportService {
 
 
     /**
@@ -49,7 +49,7 @@ class AirportServiceImpl implements AirportService {
     /**
      * Default constructor. Default web service URL will be used
      */
-    AirportServiceImpl() throws IOException {
+    public AirportServiceImpl() throws IOException {
         this(DEFAULT_URL);
     }
 

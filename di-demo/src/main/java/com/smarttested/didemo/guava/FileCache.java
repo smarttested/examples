@@ -1,4 +1,4 @@
-package com.smarttested.didemo.guava.collections;
+package com.smarttested.didemo.guava;
 
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;

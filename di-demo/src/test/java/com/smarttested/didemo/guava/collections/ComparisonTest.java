@@ -4,6 +4,9 @@ import com.google.common.base.Joiner;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
+import com.smarttested.didemo.guava.Airport;
+import com.smarttested.didemo.guava.AirportServiceImpl;
+import com.smarttested.didemo.guava.Predicates;
 import org.testng.annotations.Test;
 
 import javax.annotation.Nullable;
@@ -48,7 +51,7 @@ public class ComparisonTest {
     }
 
     @Test
-    public void testIntersection(){
+    public void testIntersection() {
 
 
         Sets.SetView<String> intersection = Sets.intersection(SET1, SET2);
@@ -58,15 +61,14 @@ public class ComparisonTest {
         System.out.println("Difference: " + difference);
 
 
-
         System.out.println("Difference Left: " + Sets.difference(SET1, SET2));
     }
 
     @Test
     //any - like contains one
     //all - like contains ALL
-    public void testAny(){
-       boolean result = Iterables.any(SET1, new Predicate<String>() {
+    public void testAny() {
+        boolean result = Iterables.any(SET1, new Predicate<String>() {
             @Override
             public boolean apply(@Nullable String input) {
                 return "one".equals(input);
@@ -78,7 +80,7 @@ public class ComparisonTest {
 
     @Test
     // composition: AND, OR
-    public void testComposition(){
+    public void testComposition() {
         Predicate<String> predicate = com.google.common.base.Predicates.and(new Predicate<String>() {
             @Override
             public boolean apply(@Nullable String input) {

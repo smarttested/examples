@@ -1,4 +1,4 @@
-package com.smarttested.didemo.guava.collections;
+package com.smarttested.didemo.guava;
 
 import com.google.common.base.Optional;
 
@@ -20,7 +20,7 @@ public class FileSystemUtils {
      * @param root            Root directory for file search
      * @param fileNamePattern File name pattern
      * @return
-     * @throws IOException
+     * @throws java.io.IOException
      */
     public static Optional<Path> findPath(Path root, String fileNamePattern) throws IOException {
         Finder finder = new Finder(fileNamePattern);
@@ -35,7 +35,7 @@ public class FileSystemUtils {
      * @param root            Root directory for file search
      * @param fileNamePattern File name pattern
      * @return
-     * @throws IOException
+     * @throws java.io.IOException
      */
     public static Optional<Path> findPath(String root, String fileNamePattern) throws IOException {
         return findPath(FileSystems.getDefault().getPath(root), fileNamePattern);
