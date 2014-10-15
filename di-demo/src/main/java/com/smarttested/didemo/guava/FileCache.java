@@ -65,9 +65,8 @@ public class FileCache {
 
     private CachedFile createCacheFile() {
         fileDate = Instant.now();
-        CachedFile file = new CachedFile(new File(StandardSystemProperty.JAVA_IO_TMPDIR.value(), fileDate.toEpochMilli() + "_" + fileName));
 
-        return file;
+        return new CachedFile(new File(StandardSystemProperty.JAVA_IO_TMPDIR.value(), fileDate.toEpochMilli() + "_" + fileName));
     }
 
     public static class CachedFile {
